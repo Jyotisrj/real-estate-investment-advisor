@@ -1,136 +1,181 @@
 
-# 🏡 Real Estate Investment Advisor
+# Real Estate Investment Advisor
 
-An interactive Machine Learning application that analyzes Indian residential properties, evaluates investment suitability, and explores illustrative five-year property value scenarios.
+## 1. Project Overview
 
-## 📌 Project Overview
+The Real Estate Investment Advisor is a machine learning-based application designed to analyze residential property information, assess investment suitability, and explore illustrative future property value scenarios.
 
-The Real Estate Investment Advisor helps users analyze property characteristics and understand their investment suitability using a Logistic Regression classification model.
+The project uses Python, Machine Learning, Pandas, Scikit-learn, and Streamlit.
 
-The application also provides an illustrative five-year property price projection based on an assumed annual appreciation rate.
+## Live Application
 
-## 🎯 Project Objectives
+Try the deployed application here:
 
-- Analyze residential property data across India.
-- Perform data cleaning and feature engineering.
-- Evaluate property investment suitability.
-- Apply Logistic Regression for classification.
-- Explore illustrative five-year property price scenarios.
-- Build an interactive web application using Streamlit.
+[Real Estate Investment Advisor – Streamlit App](https://jyotisrj-real-estate-investment-advisor-app-78vutp.streamlit.app/)
 
-## 📊 Dataset Information
+## 2. Project Objectives
 
-- Dataset: India Housing Prices
-- Total Records: 250,000
-- States: 20
-- Cities: 42
-- Localities: 500
-- Original Features: 23
-- Final Processed Features: 43
+- Analyze Indian housing market data.
+- Clean and preprocess property information.
+- Perform Exploratory Data Analysis (EDA).
+- Create meaningful property-related features.
+- Calculate investment suitability scores.
+- Classify properties as Good Investment or Not Good Investment.
+- Estimate illustrative five-year property values.
+- Develop an interactive Streamlit application.
 
-## 🛠️ Technologies Used
+## 3. Dataset Description
+
+The project uses an Indian housing dataset containing:
+
+- 250,000 property records
+- 23 original columns
+- 20 states
+- 42 cities
+- 500 localities
+
+The dataset contains information about property prices, size, location, age, furnishing, amenities, parking, security, and accessibility.
+
+## 4. Technologies Used
 
 - Python
 - Pandas and NumPy
 - Matplotlib and Seaborn
 - Scikit-learn
-- Plotly
-- Streamlit
+- Logistic Regression
 - Joblib
+- Streamlit
 
-## ⚙️ Machine Learning
+## 5. Methodology
 
-**Algorithm:** Logistic Regression
+### Step 1: Data Understanding
 
-**Target Variable:** Good_Investment
+Examined dataset structure, data types, statistical summaries, missing values, duplicates, and data quality issues.
 
-**Classification Accuracy:** 96.47%
+### Step 2: Exploratory Data Analysis
 
-The target variable is generated using a rule-based investment suitability score. Therefore, the model learns to reproduce those labels rather than predict verified investment profitability.
+Analyzed property prices, property types, city-wise prices, property sizes, property age, and numerical correlations.
 
-## 📈 Investment Analysis
+### Step 3: Data Preprocessing
 
-The application provides:
+- Corrected invalid price-per-square-foot values.
+- Identified and flagged floor inconsistencies.
+- Standardized amenity descriptions.
+- Checked missing values and duplicate records.
 
-- Property investment suitability classification.
-- Prediction probabilities.
-- Current property price analysis.
-- Illustrative five-year property value projection.
-- Market insights and interactive visualizations.
+### Step 4: Feature Engineering
 
-## 🖥️ Application Features
+Created additional features:
 
-### 1. Property Analysis
-Enter property details to evaluate investment suitability and explore future price scenarios.
+- Amenities_Count
+- Property_Age_Group
+- Size_per_BHK
+- Nearby_Facilities_Count
+- Transport_Accessibility_Score
+- Security_Flag
+- Parking_Flag
 
-### 2. Market Insights
-Explore property type distribution, average city prices, investment suitability categories, and current versus projected average prices.
+### Step 5: Investment Suitability Scoring
 
-### 3. About Project
-View project methodology, model information, and limitations.
+Developed a weighted scoring approach using affordability, property age, nearby facilities, transport accessibility, amenities, security, and parking.
 
-## 📂 Project Structure
+Properties with a suitability score of 60 or above were labelled Good Investment.
 
-```text
-real_estate_project/
-│
-├── app.py
-├── requirements.txt
-├── project_config.json
-│
-├── data/
-│   ├── raw/
-│   ├── cleaned/
-│   └── processed/
-│
-├── models/
-│   ├── logistic_regression_model.pkl
-│   ├── preprocessor.pkl
-│   └── feature_columns.pkl
-│
-├── notebooks/
-├── src/
-└── reports/
-    ├── figures/
-    └── metrics/
-```
+### Step 6: Machine Learning Model
 
-## 🚀 Run Locally
+Trained a Logistic Regression classifier using:
 
-1. Clone the repository:
+- 20 input features
+- StandardScaler
+- OneHotEncoder
+- 80% training data
+- 20% testing data
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
+### Step 7: Model Evaluation
 
-2. Navigate to the project folder:
+Evaluated the classifier using accuracy, precision, recall, F1-score, ROC-AUC, and a confusion matrix.
 
-```bash
-cd real_estate_project
-```
+### Step 8: Streamlit Application
 
-3. Install dependencies:
+Developed an interactive application to enter property details, view investment suitability results, and explore illustrative five-year price scenarios.
+
+## 6. Key Findings
+
+- The dataset contains 250,000 property records.
+- No missing values or duplicate records were identified in the original dataset.
+- 2,534 invalid price-per-square-foot values were corrected.
+- 116,304 floor inconsistencies were identified and flagged.
+- The Good Investment category represents approximately 23.28% of the dataset.
+- The Logistic Regression model achieved approximately 96.47% accuracy in the notebook experiment.
+
+## 7. Use Cases
+
+- Compare residential property characteristics.
+- Explore investment suitability based on defined criteria.
+- Analyze property price patterns across cities.
+- Understand the influence of property features on suitability scores.
+- Explore illustrative future property value scenarios.
+
+## 8. Limitations
+
+- Investment labels are generated using a rule-based scoring system, not verified investment outcomes.
+- The classification model learns to reproduce these generated labels.
+- Five-year price projections use an assumed annual appreciation rate of 8%.
+- Projected values are illustrative scenarios, not guaranteed market forecasts.
+- The dataset does not provide actual historical property appreciation or rental returns.
+
+## 9. How to Run the Project
+
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run the application:
+Run the EDA script:
+
+```bash
+python src/eda.py
+```
+
+Run data preprocessing:
+
+```bash
+python src/data_preprocessing.py
+```
+
+Run feature engineering:
+
+```bash
+python src/feature_engineering.py
+```
+
+Generate investment suitability scores:
+
+```bash
+python src/investment_scoring.py
+```
+
+Train the classification model:
+
+```bash
+python src/train_classification.py
+```
+
+Evaluate the trained model:
+
+```bash
+python src/evaluate_model.py
+```
+
+Run the Streamlit application:
 
 ```bash
 streamlit run app.py
 ```
 
-## ⚠️ Important Limitations
+## 10. Conclusion
 
-- Investment suitability labels are generated using a rule-based scoring methodology.
-- Prediction probabilities represent model estimates for these rule-generated labels, not the probability of making a profit.
-- Five-year property values are illustrative scenarios based on an assumed annual appreciation rate of 8%.
-- These projections are not guaranteed forecasts or financial advice.
-- The dataset does not contain verified historical property appreciation or actual investment returns.
+The project demonstrates an end-to-end data science workflow, from data understanding and preprocessing to machine learning model development and interactive application deployment.
 
-🚀 **Live Demo:** [Open Real Estate Investment Advisor](https://jyotisrj-real-estate-investment-advisor-app-78vutp.streamlit.app/)
-
-## 👩‍💻 Author
-
-**Jyoti**
+It provides an exploratory framework for property analysis and investment suitability assessment using defined criteria.
