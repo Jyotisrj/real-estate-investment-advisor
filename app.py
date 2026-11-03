@@ -25,7 +25,7 @@ st.set_page_config(
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODEL_DIR = os.path.join(BASE_DIR, "models")
-DATA_DIR = os.path.join(BASE_DIR, "data", "processed")
+DATA_DIR = os.path.join(BASE_DIR, "Data", "processed")
 
 MODEL_PATH = os.path.join(MODEL_DIR, "logistic_regression_model.pkl")
 PREPROCESSOR_PATH = os.path.join(MODEL_DIR, "preprocessor.pkl")
