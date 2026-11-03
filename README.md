@@ -13,6 +13,9 @@ Try the deployed application here:
 
 [Real Estate Investment Advisor – Streamlit App](https://jyotisrj-real-estate-investment-advisor-app-78vutp.streamlit.app/)
 
+*GitHub Repository:*  
+https://github.com/Jyotisrj/real-estate-investment-advisor
+
 ## 2. Project Objectives
 
 - Analyze Indian housing market data.
