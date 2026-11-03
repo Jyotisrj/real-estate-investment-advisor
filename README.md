@@ -129,6 +129,8 @@ streamlit run app.py
 - These projections are not guaranteed forecasts or financial advice.
 - The dataset does not contain verified historical property appreciation or actual investment returns.
 
+🚀 **Live Demo:** [Open Real Estate Investment Advisor](https://jyotisrj-real-estate-investment-advisor-app-78vutp.streamlit.app/)
+
 ## 👩‍💻 Author
 
 **Jyoti**
