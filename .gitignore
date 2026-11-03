@@ -1,4 +1,3 @@
-
 __pycache__/
 *.py[cod]
 venv/
@@ -7,10 +6,10 @@ venv/
 .ipynb_checkpoints/
 .DS_Store
 
-# Exclude unnecessary datasets
+# Ignore large datasets
 data/raw/
 data/cleaned/
 data/processed/*
 
-# Keep compressed dataset required by the app
-!data/processed/real_estate_final_dataset.zip
+# Keep the final dataset required by Streamlit
+!data/processed/real_estate_final_dataset.csv
