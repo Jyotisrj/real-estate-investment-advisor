@@ -1,0 +1,11 @@
+{
+    "project_name": "Real Estate Investment Advisor",
+    "classification_algorithm": "Logistic Regression",
+    "classification_target": "Good_Investment",
+    "investment_score_threshold": 60,
+    "annual_appreciation_rate": 0.08,
+    "projection_period_years": 5,
+    "price_projection_method": "Compound annual growth scenario",
+    "currency": "INR",
+    "price_unit": "Lakhs"
+}
