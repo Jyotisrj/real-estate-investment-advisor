@@ -31,7 +31,7 @@ MODEL_PATH = os.path.join(MODEL_DIR, "logistic_regression_model.pkl")
 PREPROCESSOR_PATH = os.path.join(MODEL_DIR, "preprocessor.pkl")
 FEATURE_PATH = os.path.join(MODEL_DIR, "feature_columns.pkl")
 
-DATA_PATH = os.path.join(DATA_DIR, "real_estate_final_dataset.csv")
+DATA_PATH = os.path.join(DATA_DIR, "real_estate_final_dataset.zip")
 CONFIG_PATH = os.path.join(BASE_DIR, "project_config.json")
 
 # -----------------------------------------
@@ -49,7 +49,7 @@ def load_model_files():
 
 @st.cache_data
 def load_dataset():
-    return pd.read_csv(DATA_PATH)
+    return pd.read_csv(DATA_PATH, compression="zip")
 
 
 @st.cache_data
